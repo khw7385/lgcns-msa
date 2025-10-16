@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: sc-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: hello_route
+              uri: http://localhost:8765
+              predicates:
+                - Path=/hello
+
+            - id: abc2hello_route
+              uri: http://localhost:8765
+              predicates:
+                - Path=/abc
+
+            - id: def2hello_route
+              uri: http://localhost:8765
+              predicates:
+                - Path=/def
+              filters:
+                - RewritePath=/def, /hello
