@@ -15,7 +15,12 @@ services:
         reservations:
           cpus: '0.05'
           memory: 20M
-
+  scg-proxy:
+    image: lgcns-sc-gateway:1.1.3
+    ports: 
+      - "9000:9000"
+    depends_on:
+      - blog
   blog:
     image: lgcns-spring-rest-api:1.1.0
     ports: 
