@@ -16,7 +16,7 @@ services:
           memory: 20M
 
   scg-proxy:
-    image: lgcns-sc-gateway:1.2.4
+    image: lgcns-sc-gateway:1.2.6
     ports:
       - "9000:9000"
     depends_on:
